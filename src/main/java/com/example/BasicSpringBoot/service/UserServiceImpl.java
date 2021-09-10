@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> UserWithMorePosts() {
-        return userRepository.UserWithMorePosts();
+    public List<User> UserWithMorePosts(int number) {
+        return userRepository.UserWithMorePosts(number);
     }
 }

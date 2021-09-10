@@ -14,8 +14,8 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, Long> {
 
     @Query("select u.posts from User u where u.id = :id")
-    public List<Post> findPosts(@Param("id") Long id);
+    List<Post> findPosts(@Param("id") Long id);
 
-    @Query("select u from User u where u.posts.size > 1")
-    public List<User> UserWithMorePosts();
+    @Query("select u from User u where u.posts.size > :number")
+    List<User> UserWithMorePosts(@Param("number") int number);
 }

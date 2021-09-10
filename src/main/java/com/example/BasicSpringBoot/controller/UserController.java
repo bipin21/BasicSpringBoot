@@ -4,7 +4,6 @@ import com.example.BasicSpringBoot.domain.Post;
 import com.example.BasicSpringBoot.domain.User;
 import com.example.BasicSpringBoot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -40,8 +39,8 @@ public class UserController {
 
    // get users who have more than 1 posts
     @GetMapping("usersWithMoreThanOnePosts")
-    public List<User> UserWithMorePosts(){
-        return userService.UserWithMorePosts();
+    public List<User> UserWithMorePosts(@RequestParam("number") int number){
+        return userService.UserWithMorePosts(number);
     }
 
 
