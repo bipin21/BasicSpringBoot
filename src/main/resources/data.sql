@@ -5,22 +5,20 @@ INSERT into POST (id, title, content, author)  VALUES (4, 'SpringBoot','This is 
 INSERT into POST (id, title, content, author) VALUES (5, 'fifth','Spring is awesome','Bob');
 INSERT into POST (id, title, content, author) VALUES (6, 'sixth','Spring is awesome','Bob');
 
+-- 1234
+INSERT into USER (id, name, username, password, IS_Enabled)  VALUES (111, 'Admin','admin','$2a$12$S6yoRZrOwrYS7JVYC231L.Tkac/Z2iYRfVpIpiAcI0ldhmEAVA72i',true);
+INSERT into USER (id, name, username, password, IS_Enabled)  VALUES (112, 'User','user','$2a$12$S6yoRZrOwrYS7JVYC231L.Tkac/Z2iYRfVpIpiAcI0ldhmEAVA72i',true);
 
-INSERT into USERS (id, name) VALUES (1, 'Ram');
-INSERT into USERS (id, name) VALUES (2, 'John');
-INSERT into USERS (id, name) VALUES (3, 'Bob');
-INSERT into USERS (id, name) VALUES (4, 'Bob1');
 
-INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (1, 1);
-INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (2, 2);
-INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (3, 3);
-INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (4, 4);
-INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (1, 5);
-INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (1, 6);
---
--- INSERT into USERS_POSTS  (USER_ID, POSTS_ID) VALUES (1, 1);
--- INSERT into USERS_POSTS  (USER_ID, POSTS_ID) VALUES (2, 2);
--- INSERT into USERS_POSTS  (USER_ID, POSTS_ID) VALUES (3, 3);
--- INSERT into USERS_POSTS  (USER_ID, POSTS_ID) VALUES (4, 4);
--- INSERT into USERS_POSTS  (USER_ID, POSTS_ID) VALUES (1, 5);
--- INSERT into USERS_POSTS  (USER_ID, POSTS_ID) VALUES (1, 6);
+INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (111, 1);
+INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (111, 2);
+INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (111, 3);
+INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (112, 4);
+INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (112, 5);
+INSERT into USER_POSTS (USER_ID, POSTS_ID) VALUES (112, 6);
+
+INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (1, 'USER');
+INSERT INTO ROLE(ROLE_ID, ROLE) VALUES (2, 'ADMIN');
+
+insert into USER_ROLES(USER_ID, ROLE_ID) values (111, 2);
+insert into USER_ROLES(USER_ID, ROLE_ID) values (112, 1);

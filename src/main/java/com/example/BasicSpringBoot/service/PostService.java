@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface PostService {
 
-    public List<Post> getAll();
+    public List<Post> findAll();
 
     public Optional<Post> getById(int id);
 

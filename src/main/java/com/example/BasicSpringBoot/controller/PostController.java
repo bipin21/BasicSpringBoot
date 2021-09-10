@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/posts")
 @RestController
@@ -22,9 +24,15 @@ public class PostController {
         this.postService = postService;
     }
 
+    @PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
     @GetMapping
     public List<Post> getAllPosts() {
-        return postService.getAll();
+        return postService.findAll();
+    }
+
+    @GetMapping("/admin")
+    public String inValidTest2(){
+        return "OK";
     }
 
     @PostMapping
