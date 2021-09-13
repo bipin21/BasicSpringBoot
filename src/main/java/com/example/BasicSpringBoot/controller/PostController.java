@@ -2,6 +2,7 @@ package com.example.BasicSpringBoot.controller;
 
 import com.example.BasicSpringBoot.domain.Post;
 import com.example.BasicSpringBoot.domain.PostV2;
+import com.example.BasicSpringBoot.service.MyUserDetails;
 import com.example.BasicSpringBoot.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
@@ -11,7 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RequestMapping("/posts")
 @RestController
