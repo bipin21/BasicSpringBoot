@@ -6,7 +6,7 @@ INSERT into POST (id, title, content, author) VALUES (5, 'fifth','Spring is awes
 INSERT into POST (id, title, content, author) VALUES (6, 'sixth','Spring is awesome','Bob');
 
 -- 1234
-INSERT into USER (id, name, username, password, IS_Enabled)  VALUES (111, 'Admin','admin','$2a$12$S6yoRZrOwrYS7JVYC231L.Tkac/Z2iYRfVpIpiAcI0ldhmEAVA72i',true);
+INSERT into USER (id, name, username, password, IS_Enabled)  VALUES (111, 'Dean','dean','$2a$12$S6yoRZrOwrYS7JVYC231L.Tkac/Z2iYRfVpIpiAcI0ldhmEAVA72i',true);
 INSERT into USER (id, name, username, password, IS_Enabled)  VALUES (112, 'User','user','$2a$12$S6yoRZrOwrYS7JVYC231L.Tkac/Z2iYRfVpIpiAcI0ldhmEAVA72i',true);
 
 

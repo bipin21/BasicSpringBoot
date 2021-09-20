@@ -2,6 +2,7 @@ package com.example.BasicSpringBoot.controller;
 
 import com.example.BasicSpringBoot.domain.Post;
 import com.example.BasicSpringBoot.domain.User;
+import com.example.BasicSpringBoot.service.MyUserDetailsService;
 import com.example.BasicSpringBoot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,11 @@ public class UserController {
     @GetMapping("/{id}")
     public Optional<User> getById(@PathVariable("id") long id){
         return userService.getUserById(id);
+    }
+
+    @GetMapping("finduser/{username}")
+    public Optional<User> getByUsername(@PathVariable("username") String username){
+        return userService.findByUsername(username);
     }
 
     @PostMapping

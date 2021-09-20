@@ -18,4 +18,6 @@ public interface UserService {
     public List<Post> findPosts(long id);
 
     public List<User> UserWithMorePosts(int number);
+
+    public Optional<User> findByUsername(String username);
 }

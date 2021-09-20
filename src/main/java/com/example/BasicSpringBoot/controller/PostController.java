@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin(origins={"http://localhost:3000"})
 @RequestMapping("/posts")
 @RestController
 public class PostController {
@@ -60,7 +60,8 @@ public class PostController {
     }
 
     // get by Id with hateaos
-    @GetMapping(value = "{id}", headers = "X-API-VERSION=1")
+//    @GetMapping(value = "{id}", headers = "X-API-VERSION=1")
+    @GetMapping(value = "{id}")
     protected EntityModel<Post> getById(@PathVariable("id") int id) {
         Post post = postService.getById(id).orElse(null);
         EntityModel<Post> resource = EntityModel.of(post);

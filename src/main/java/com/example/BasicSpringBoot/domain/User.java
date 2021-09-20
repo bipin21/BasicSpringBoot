@@ -33,9 +33,9 @@ public class User {
             @JoinColumn(name = "ROLE_ID") })
     private Set<Role> roles;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
     @Fetch(FetchMode.JOIN)
-    @JoinTable(name = "USER_POSTS") // by default it will be named as Users_Posts
+    @JoinTable(name = "USER_POSTS")
     List<Post> posts;
 
 }

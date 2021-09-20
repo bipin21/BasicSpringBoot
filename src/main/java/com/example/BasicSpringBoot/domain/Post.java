@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Table(name = "POST")
 public class Post {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String title;
     String content;
